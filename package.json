@@ -1,13 +1,15 @@
 {
-  "name": "",
-  "version": "",
+  "name": "restaurant_info",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Alex Sheehan",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+
+  },
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.3.6"

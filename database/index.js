@@ -124,14 +124,16 @@ const RestaurantInfo = function() {
   }
 };
 
-var arr = [];
-for (let i = 0; i < 10; i++) {
-  let a = new RestaurantInfo();
-  arr.push(a);
-}
-// console.log(arr);
+const createRecords = (num) => {
+  let arr = [];
+  for (let i = 0; i < num; i++) {
+    let newData = new RestaurantInfo();
+    arr.push(newData);
+  }
+  let Restaurant = mongoose.model('Restaurant', restaurantInfoSchema);
+  Restaurant.create(arr, (err, data) => {
+    // Callback required
+  });
+};
 
-let Restaurant = mongoose.model('Restaurant', restaurantInfoSchema);
-Restaurant.create(arr, (err, data) => {
-  console.log(data);
-});
+module.exports.createRecords = createRecords;

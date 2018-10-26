@@ -1,2 +1,39 @@
-# restaurant_info_service
-Restaurant info based on OpenTable module (service repo)
+# Project Name
+
+> Project description
+
+## Related Projects
+
+  - https://github.com/katable/reviews_service
+  - https://github.com/katable/menu_service
+  - https://github.com/katable/restaurant_info_service
+  - https://github.com/katable/resy_service
+
+## Table of Contents
+
+1. [Usage](#Usage)
+1. [Requirements](#requirements)
+1. [Development](#development)
+
+## Usage
+
+> Some usage instructions
+
+## Requirements
+
+An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+
+- Node 6.13.0
+- etc
+
+## Development
+
+### Installing Dependencies
+
+From within the root directory:
+
+```sh
+npm install -g webpack
+npm install
+```
+
