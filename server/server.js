@@ -5,12 +5,7 @@ const port = process.env.PORT || 3001;
 const mongoose = require('mongoose');
 const db = require('../database/index.js');
 
-app.use(express.static(path.join(__dirname, '../public')));
-
-app.get('/', (req, res) => {
-  res.send('fhqwhgads');
-  res.end();
-});
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
