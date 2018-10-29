@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './components/App.jsx';
 import './scss/base.scss';
 
 class App extends React.Component {
@@ -13,7 +12,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      fhqwhgads
+      Some text
     </div>)
   }
 }
