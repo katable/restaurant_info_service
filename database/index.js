@@ -13,7 +13,7 @@ let restaurantInfoSchema = mongoose.Schema({
   style: String,
   tags: {
     main: Array,
-    additional:Array
+    additional: Array
   },
   hours: String,
   phone: String,
