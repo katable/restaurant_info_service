@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const faker = require('faker');
+
 mongoose.connect('mongodb://localhost/opentable');
 
-let restaurantInfoSchema = mongoose.Schema({
+const restaurantInfoSchema = mongoose.Schema({
   restaurant_id: Number,
   name: String,
   stars: Number,
@@ -13,7 +13,7 @@ let restaurantInfoSchema = mongoose.Schema({
   style: String,
   tags: {
     main: Array,
-    additional: Array
+    additional: Array,
   },
   hours: String,
   phone: String,
@@ -38,7 +38,9 @@ let restaurantInfoSchema = mongoose.Schema({
   },
   entertainment: String,
   specials: String,
-  private_dining: String
+  private_dining: String,
 });
 
-module.exports.restaurantInfoSchema = restaurantInfoSchema;
+const Restaurant = mongoose.model('Restaurant', restaurantInfoSchema);
+
+module.exports.Restaurant = Restaurant;

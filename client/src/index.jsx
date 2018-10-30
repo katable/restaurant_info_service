@@ -5,15 +5,17 @@ import './scss/base.scss';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
 
-    }
+    };
   }
 
-  render () {
-    return (<div>
-      Some text
-    </div>)
+  render() {
+    return (
+      <div>
+        Some text
+      </div>
+    );
   }
 }
 

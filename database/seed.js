@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 const db = require('./index.js');
+
 mongoose.connect('mongodb://localhost/opentable');
 
 const cuisines = ['American', 'Italian', 'Steakhouse', 'Seafood', 'French', 'Indian', 'Mexican', 'Japanese', 'Chinese', 'German', 'Spanish', 'Fusion/Eclectic', 'Barbecue', 'Greek', 'Grill', 'Comfort Food', 'Turkish', 'International', 'Thai', 'Tex-Mex', 'Bistro', 'Bar/Lounge', 'Californian'];
@@ -10,48 +11,48 @@ const additionalTags = ['Bar Dining', 'Bar/Lounge', 'Beer', 'Cocktails', 'Corkag
 const payments = ['AMEX', 'Discover', 'MasterCard', 'Visa'];
 const dressStyles = ['Casual Dress', 'Business Casual', 'Smart Casual', 'Jacket Preferred'];
 const neighborhoods = ['Parkton', 'Bowdle', 'Ilchester', 'Lanesville', 'Pin Oak Acres', 'Lennox', 'Metcalfe', 'Lynden', 'New Cumberland', 'New Troy', 'Mapleton'];
-const days = 'Monday - ' + faker.random.arrayElement(['Friday', 'Saturday', 'Sunday']);
-const times = faker.random.arrayElement(['7 AM - ', '8 AM - ', '9 AM - ']) + faker.random.arrayElement(['7 PM', '8 PM', '9 PM']);
 
 const percentBool = (number) => {
-  if (Math.random() < number/100) {
+  if (Math.random() < number / 100) {
     return true;
-  } else {
-    return false;
   }
-}
+  return false;
+};
 
-const RestaurantInfo = function() {
-  let openHours = days + '\n' + times;
-  this.name = faker.commerce.productMaterial() + ' ' + faker.commerce.product();
+const RestaurantInfo = function RestaurantInfo() {
+  const days = `Monday - ${faker.random.arrayElement(['Friday', 'Saturday', 'Sunday'])}`;
+  const times = faker.random.arrayElement(['7 AM - ', '8 AM - ', '9 AM - ']) + faker.random.arrayElement(['7 PM', '8 PM', '9 PM']);
+  const openHours = `${days} \n ${times}`;
+  this.name = `${faker.commerce.productMaterial()} ${faker.commerce.product()}`;
   this.stars = faker.finance.amount(2, 5, 1);
-  this.reviews = faker.random.number({min: 10, max: 5000});
-  this.price = faker.random.number({min: 1, max: 3});
-  this.cuisine = faker.helpers.shuffle(cuisines).slice(0,3);
-  this.description = faker.lorem.paragraphs(faker.random.number({min: 1, max: 3}));
+  this.reviews = faker.random.number({ min: 10, max: 5000 });
+  this.price = faker.random.number({ min: 1, max: 3 });
+  this.cuisine = faker.helpers.shuffle(cuisines).slice(0, 3);
+  this.description = faker.lorem.paragraphs(faker.random.number({ min: 1, max: 3 }));
   this.style = faker.random.arrayElement(styles);
   this.tags = {
-    main: faker.helpers.shuffle(mainTags).slice(0,3),
-    additional: faker.helpers.shuffle(additionalTags).slice(0, faker.random.number({min: 1, max: 10}))
-  }
+    main: faker.helpers.shuffle(mainTags).slice(0, 3),
+    additional: faker.helpers.shuffle(additionalTags)
+      .slice(0, faker.random.number({ min: 1, max: 10 })),
+  };
   this.hours = openHours;
   this.phone = faker.phone.phoneNumberFormat(1);
   this.website = faker.internet.url();
   this.payment = payments.slice(Math.floor(Math.random() * (payments.length - 1)), payments.length);
   this.dress = faker.random.arrayElement(dressStyles);
-  let locStreet = faker.address.streetAddress();
-  let locCity = faker.address.city();
-  let locState = faker.address.stateAbbr();
-  let locZIP = faker.address.zipCode();
-  let locNeighborhood = faker.random.arrayElement(neighborhoods);
-  let crossStreet = faker.address.streetName();
+  const locStreet = faker.address.streetAddress();
+  const locCity = faker.address.city();
+  const locState = faker.address.stateAbbr();
+  const locZIP = faker.address.zipCode();
+  const locNeighborhood = faker.random.arrayElement(neighborhoods);
+  const crossStreet = faker.address.streetName();
   this.location = {
     street: locStreet,
     city: locCity,
     state: locState,
     zip: locZIP,
     neighborhood: locNeighborhood,
-    cross_street: crossStreet
+    cross_street: crossStreet,
   };
 
   if (percentBool(60)) {
@@ -63,7 +64,7 @@ const RestaurantInfo = function() {
   }
 
   if (percentBool(80)) {
-    this.chef = faker.name.firstName() + ' ' + faker.name.lastName();
+    this.chef = `${faker.name.firstName()} ${faker.name.lastName()}`;
   }
 
   if (percentBool(50)) {
@@ -73,8 +74,8 @@ const RestaurantInfo = function() {
   if (percentBool(40)) {
     this.private_party = {
       facilities: faker.lorem.paragraph(),
-      contact: faker.name.findName() + ': ' + faker.phone.phoneNumberFormat(1)
-    }
+      contact: `${faker.name.findName()}: ${faker.phone.phoneNumberFormat(1)}`,
+    };
   }
 
   if (percentBool(10)) {
@@ -91,15 +92,14 @@ const RestaurantInfo = function() {
 };
 
 const createRecords = (num) => {
-  let arr = [];
-  for (let i = 0; i < num; i++) {
-    let newData = new RestaurantInfo();
+  const arr = [];
+  for (let i = 1; i < num; i += 1) {
+    const newData = new RestaurantInfo();
+    newData.restaurant_id = i;
     arr.push(newData);
   }
-  let Restaurant = mongoose.model('Restaurant', db.restaurantInfoSchema);
-  Restaurant.create(arr, (err, data) => {
-    // Callback required
-  });
+  const Restaurant = mongoose.model('Restaurant', db.restaurantInfoSchema);
+  Restaurant.create(arr).then();
 };
 
 createRecords(100);
