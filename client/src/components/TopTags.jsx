@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TopTags = () => {
-  const something = 'asdf';
+const TopTags = ({ restaurantTags }) => {
+  const tagButtons = restaurantTags.map(tagButton => <div className="tag-button">{tagButton}</div>);
   return (
-    <div>
-      {something}
+    <div id="top-tags">
+      <div className="tag-text">Top Tags:</div>
+      {tagButtons}
     </div>
   );
 };

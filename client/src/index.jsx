@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './scss/base.scss';
 import Title from './components/Title.jsx';
 import InfoMenu from './components/InfoMenu.jsx';
 import TopTags from './components/TopTags.jsx';
 import Description from './components/Description.jsx';
 import RestaurantDetails from './components/RestaurantDetails.jsx';
+import PropTypes from 'prop-types';
+import './scss/base.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class App extends React.Component {
   }
 
   getRestaurantInfo() {
-    fetch('/restaurant/profile/1')
+    fetch('/restaurant/profile/3')
       .then(res => res.json())
       .then((json) => {
         console.log(json);
@@ -70,10 +71,10 @@ class App extends React.Component {
   render() {
     return (
       <div id="overview-section">
-        <Title restaurantInfo={this.state.restaurantInfo} />
+        <Title restaurantName={this.state.restaurantInfo.name} />
         <InfoMenu restaurantInfo={this.state.restaurantInfo} />
-        <TopTags restaurantInfo={this.state.restaurantInfo} />
-        <Description restaurantInfo={this.state.restaurantInfo} />
+        <TopTags restaurantTags={this.state.restaurantInfo.tags.main} />
+        <Description restaurantDescription={this.state.restaurantInfo.description} />
         <RestaurantDetails restaurantInfo={this.state.restaurantInfo} />
       </div>
     );
