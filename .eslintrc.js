@@ -6,9 +6,7 @@ module.exports = {
     "node": true,
     "jest": true,
   },
+  "plugins": [
+    "react", "import", "jsx-a11y",
+  ],
 };
-  // "rules": {
-  //   "arrow-body-style": "off",
-  //   "no-console": "off",
-  //   "no-continue": "off"
-  // }
