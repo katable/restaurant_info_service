@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600');
+// @import '../../node_modules/ottheme-icons/token.scss';
+$opentable-red: #da3743;
+$grey: #d8d9db;
+$star-grey: #e1e1e1;
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+}
+
+#overview-section {
+  padding: 2rem 1rem 4rem;
+  width: 640px;
+}
+
+h1 {
+  border-bottom: 1px solid $grey;
+  font-size: 3em;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+svg {
+  display: inline-block;
+  margin-right: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  .red {
+    fill: $opentable-red;
+  }
+  .grey {
+    fill: $star-grey;
+  }
+  .nofill {
+    fill: none;
+  }
+}
+
+#info-menu {
+  font-size: 0.875em;
+  height: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  .review-container, .reviews {
+    display: flex;
+  }
+  .stars, .price, .cuisine {
+    display: flex;
+    // align-items: center;
+  }
+  .stars {
+    .icons {
+      display: inline-block;
+    }
+    svg {
+      height: 1rem;
+      width: 1rem;
+      margin: 0;
+    }
+  }
+  .review-text, .price-text, .cuisine-text, .stars-text {
+    margin-right: 0.5rem;
+    display: flex;
+    align-self: center;
+  }
+  .stars-text {
+    margin-left: 0.35rem;
+  }
+}
+
+#top-tags {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  .tag-text {
+    display: flex;
+    font-size: 1.125em;
+    margin-right: 0.5rem;
+  }
+  .tag-button {
+    border: 1px solid $grey;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875em;
+    &:hover {
+      border: 2px solid $opentable-red;
+      padding: calc(0.5rem - 1px) calc(1rem - 1px);
+      cursor: pointer;
+    }
+  }
+}
+
+#description {
+  font-size: 1em;
+  font-weight: 300;
+  width: 90%;
+  margin-bottom: 2rem;
+  #description-text {
+    margin-bottom: 1rem;
+  }
+  .collapsed-p {
+    height: 63px;
+    overflow: hidden;
+  }
+  .expanded-p {
+    height: auto;
+  }
+  .expand-description {
+    color: $opentable-red;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
