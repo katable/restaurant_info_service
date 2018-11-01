@@ -4,13 +4,37 @@ const db = require('./index.js');
 
 mongoose.connect('mongodb://localhost/opentable');
 
-const cuisines = ['American', 'Italian', 'Steakhouse', 'Seafood', 'French', 'Indian', 'Mexican', 'Japanese', 'Chinese', 'German', 'Spanish', 'Fusion/Eclectic', 'Barbecue', 'Greek', 'Grill', 'Comfort Food', 'Turkish', 'International', 'Thai', 'Tex-Mex', 'Bistro', 'Bar/Lounge', 'Californian'];
+const cuisines = [
+  'American', 'Italian', 'Steakhouse', 'Seafood',
+  'French', 'Indian', 'Mexican', 'Japanese',
+  'Chinese', 'German', 'Spanish', 'Fusion/Eclectic',
+  'Barbecue', 'Greek', 'Grill', 'Comfort Food',
+  'Turkish', 'International', 'Thai', 'Tex-Mex',
+  'Bistro', 'Bar/Lounge', 'Californian',
+];
 const styles = ['Casual Elegant', 'Casual Dining', 'Fine Dining', 'Elegant Dining'];
-const mainTags = ['Fit For Foodies', 'Neighborhood Gem', 'Special Occasion', 'Tasting Menu', 'Quiet Conversation', 'Creative Cuisine', 'Casual', 'Romantic', 'Local Ingredients', 'Notable Wine List', 'Authentic', 'Fun', 'Vibrant Bar Scene', 'Good For A Date'];
-const additionalTags = ['Bar Dining', 'Bar/Lounge', 'Beer', 'Cocktails', 'Corkage Fee', 'Counter Seating', 'Farm to Table', 'Fireplace', 'Full Bar', 'Gluten-free Menu', 'Happy Hour', 'Late Night', 'Non-Smoking', 'Outdoor dining', 'Patio/Outdoor Dining', 'Weekend Brunch', 'Wheelchair Access', 'Wine'];
+const mainTags = [
+  'Fit For Foodies', 'Neighborhood Gem', 'Special Occasion',
+  'Tasting Menu', 'Quiet Conversation', 'Creative Cuisine',
+  'Casual', 'Romantic', 'Local Ingredients',
+  'Notable Wine List', 'Authentic', 'Fun',
+  'Vibrant Bar Scene', 'Good For A Date',
+];
+const additionalTags = [
+  'Bar Dining', 'Bar/Lounge', 'Beer', 'Cocktails',
+  'Corkage Fee', 'Counter Seating', 'Farm to Table', 'Fireplace',
+  'Full Bar', 'Gluten-free Menu', 'Happy Hour', 'Late Night',
+  'Non-Smoking', 'Outdoor dining', 'Patio/Outdoor Dining', 'Weekend Brunch',
+  'Wheelchair Access', 'Wine',
+];
 const payments = ['AMEX', 'Discover', 'MasterCard', 'Visa'];
 const dressStyles = ['Casual Dress', 'Business Casual', 'Smart Casual', 'Jacket Preferred'];
-const neighborhoods = ['Parkton', 'Bowdle', 'Ilchester', 'Lanesville', 'Pin Oak Acres', 'Lennox', 'Metcalfe', 'Lynden', 'New Cumberland', 'New Troy', 'Mapleton'];
+const neighborhoods = [
+  'Parkton', 'Bowdle', 'Ilchester',
+  'Lanesville', 'Pin Oak Acres', 'Lennox',
+  'Metcalfe', 'Lynden', 'New Cumberland',
+  'New Troy', 'Mapleton',
+];
 
 const percentBool = (number) => {
   if (Math.random() < number / 100) {
