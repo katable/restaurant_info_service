@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ restaurantName }) => {
-  return (
-    <h1>{restaurantName}</h1>
-  );
-};
+const Title = ({ restaurantName }) => (
+  <h1>{restaurantName}</h1>
+);
 
 Title.propTypes = {
   restaurantName: PropTypes.string,
@@ -14,6 +12,5 @@ Title.propTypes = {
 Title.defaultProps = {
   restaurantName: '',
 };
-
 
 export default Title;
