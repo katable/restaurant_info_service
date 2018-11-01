@@ -50,7 +50,9 @@ class App extends React.Component {
         specials: '',
         private_dining: '',
       },
+      expanded: false,
     };
+    this.toggleExpand = this.toggleExpand.bind(this);
   }
 
   componentDidMount() {
@@ -58,14 +60,19 @@ class App extends React.Component {
   }
 
   getRestaurantInfo() {
-    fetch('/restaurant/profile/3')
+    fetch('/restaurant/profile/1')
       .then(res => res.json())
       .then((json) => {
-        console.log(json);
         this.setState({
           restaurantInfo: json,
         });
       });
+  }
+
+  toggleExpand() {
+    this.setState({
+      expanded: !this.state.expanded,
+    });
   }
 
   render() {
@@ -74,7 +81,7 @@ class App extends React.Component {
         <Title restaurantName={this.state.restaurantInfo.name} />
         <InfoMenu restaurantInfo={this.state.restaurantInfo} />
         <TopTags restaurantTags={this.state.restaurantInfo.tags.main} />
-        <Description restaurantDescription={this.state.restaurantInfo.description} />
+        <Description restaurantDescription={this.state.restaurantInfo.description} expanded={this.state.expanded} toggleExpand={this.toggleExpand} />
         <RestaurantDetails restaurantInfo={this.state.restaurantInfo} />
       </div>
     );

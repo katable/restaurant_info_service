@@ -24,8 +24,7 @@ const InfoMenu = ({ restaurantInfo }) => {
             <path d={icons.reviews} />
           </svg>
           <div className="review-text">
-            {reviews}
-            reviews
+            {`${reviews} reviews`}
           </div>
         </div>
       </div>

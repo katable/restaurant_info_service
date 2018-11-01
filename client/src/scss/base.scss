@@ -11,6 +11,7 @@ body {
 
 #overview-section {
   padding: 2rem 1rem 4rem;
+  width: 640px;
 }
 
 h1 {
@@ -97,5 +98,25 @@ svg {
 }
 
 #description {
-  
+  font-size: 1em;
+  font-weight: 300;
+  width: 90%;
+  margin-bottom: 2rem;
+  #description-text {
+    margin-bottom: 1rem;
+  }
+  .collapsed-p {
+    height: 63px;
+    overflow: hidden;
+  }
+  .expanded-p {
+    height: auto;
+  }
+  .expand-description {
+    color: $opentable-red;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }

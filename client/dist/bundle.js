@@ -102,8 +102,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Description = function Description() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+var Description = function Description(_ref) {
+  var restaurantDescription = _ref.restaurantDescription,
+      expanded = _ref.expanded,
+      toggleExpand = _ref.toggleExpand;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "description"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "description-text",
+    className: expanded ? 'expanded-p' : 'collapsed-p'
+  }, restaurantDescription), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "expand-collapse-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    role: "presentation",
+    className: "expand-description",
+    onClick: toggleExpand
+  }, "+ Read", expanded ? ' less' : ' more')));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Description);
@@ -158,7 +172,7 @@ var InfoMenu = function InfoMenu(_ref) {
     d: icons.reviews
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "review-text"
-  }, reviews, "reviews"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "".concat(reviews, " reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "price"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: icons.priceRange
@@ -194,8 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RestaurantDetails = function RestaurantDetails() {
-  var something = 'asdf';
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, something);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RestaurantDetails);
@@ -377,13 +390,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -444,8 +457,10 @@ function (_React$Component) {
         entertainment: '',
         specials: '',
         private_dining: ''
-      }
+      },
+      expanded: false
     };
+    _this.toggleExpand = _this.toggleExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -459,14 +474,19 @@ function (_React$Component) {
     value: function getRestaurantInfo() {
       var _this2 = this;
 
-      fetch('/restaurant/profile/3').then(function (res) {
+      fetch('/restaurant/profile/1').then(function (res) {
         return res.json();
       }).then(function (json) {
-        console.log(json);
-
         _this2.setState({
           restaurantInfo: json
         });
+      });
+    }
+  }, {
+    key: "toggleExpand",
+    value: function toggleExpand() {
+      this.setState({
+        expanded: !this.state.expanded
       });
     }
   }, {
@@ -481,7 +501,9 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TopTags_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
         restaurantTags: this.state.restaurantInfo.tags.main
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Description_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        restaurantDescription: this.state.restaurantInfo.description
+        restaurantDescription: this.state.restaurantInfo.description,
+        expanded: this.state.expanded,
+        toggleExpand: this.toggleExpand
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
         restaurantInfo: this.state.restaurantInfo
       }));
@@ -538,7 +560,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#overview-section {\n  padding: 2rem 1rem 4rem; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .red {\n    fill: #da3743; }\n  svg .grey {\n    fill: #e1e1e1; }\n  svg .nofill {\n    fill: none; }\n\n#info-menu {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #info-menu .review-container, #info-menu .reviews {\n    display: flex; }\n  #info-menu .stars, #info-menu .price, #info-menu .cuisine {\n    display: flex; }\n  #info-menu .stars .icons {\n    display: inline-block; }\n  #info-menu .stars svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #info-menu .review-text, #info-menu .price-text, #info-menu .cuisine-text, #info-menu .stars-text {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #info-menu .stars-text {\n    margin-left: 0.35rem; }\n\n#top-tags {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #top-tags .tag-text {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #top-tags .tag-button {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #top-tags .tag-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#overview-section {\n  padding: 2rem 1rem 4rem;\n  width: 640px; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .red {\n    fill: #da3743; }\n  svg .grey {\n    fill: #e1e1e1; }\n  svg .nofill {\n    fill: none; }\n\n#info-menu {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #info-menu .review-container, #info-menu .reviews {\n    display: flex; }\n  #info-menu .stars, #info-menu .price, #info-menu .cuisine {\n    display: flex; }\n  #info-menu .stars .icons {\n    display: inline-block; }\n  #info-menu .stars svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #info-menu .review-text, #info-menu .price-text, #info-menu .cuisine-text, #info-menu .stars-text {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #info-menu .stars-text {\n    margin-left: 0.35rem; }\n\n#top-tags {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #top-tags .tag-text {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #top-tags .tag-button {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #top-tags .tag-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n#description {\n  font-size: 1em;\n  font-weight: 300;\n  width: 90%;\n  margin-bottom: 2rem; }\n  #description #description-text {\n    margin-bottom: 1rem; }\n  #description .collapsed-p {\n    height: 63px;\n    overflow: hidden; }\n  #description .expanded-p {\n    height: auto; }\n  #description .expand-description {\n    color: #da3743; }\n    #description .expand-description:hover {\n      text-decoration: underline;\n      cursor: pointer; }\n", ""]);
 
 // exports
 
