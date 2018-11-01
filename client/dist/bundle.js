@@ -120,6 +120,16 @@ var Description = function Description(_ref) {
   }, "+ Read", expanded ? ' less' : ' more')));
 };
 
+Description.propTypes = {
+  restaurantDescription: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  expanded: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  toggleExpand: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+Description.defaultProps = {
+  restaurantDescription: '',
+  expanded: false,
+  toggleExpand: function toggleExpand() {}
+};
 /* harmony default export */ __webpack_exports__["default"] = (Description);
 
 /***/ }),
@@ -135,9 +145,9 @@ var Description = function Description(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Stars_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Stars.jsx */ "./client/src/components/Stars.jsx");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Stars_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stars.jsx */ "./client/src/components/Stars.jsx");
 
 
 
@@ -162,7 +172,7 @@ var InfoMenu = function InfoMenu(_ref) {
   var cuisine = restaurantInfo.cuisine[0];
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "info-menu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Stars_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Stars_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
     stars: stars
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "review-container"
@@ -187,6 +197,86 @@ var InfoMenu = function InfoMenu(_ref) {
   }, cuisine)));
 };
 
+InfoMenu.propTypes = {
+  restaurantInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    restaurant_id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+    name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    stars: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+    reviews: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+    price: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+    cuisine: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+    description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    tags: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      main: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+      additional: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string)
+    }),
+    hours: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    phone: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    website: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    payment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+    dress: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    chef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    catering: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    private_party: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      facilities: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      contact: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+    }),
+    location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      street: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      city: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      state: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      zip: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      neighborhood: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      parking_details: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      public_transit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+      cross_street: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+    }),
+    entertainment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    specials: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    private_dining: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  })
+};
+InfoMenu.defaultProps = {
+  restaurantInfo: {
+    restaurant_id: 0,
+    name: '',
+    stars: 0,
+    reviews: 0,
+    price: 0,
+    cuisine: [],
+    description: '',
+    style: '',
+    tags: {
+      main: [],
+      additional: []
+    },
+    hours: '',
+    phone: '',
+    website: '',
+    payment: [],
+    dress: '',
+    chef: '',
+    catering: '',
+    private_party: {
+      facilities: '',
+      contact: ''
+    },
+    location: {
+      street: '',
+      city: '',
+      state: '',
+      zip: '',
+      neighborhood: '',
+      parking_details: '',
+      public_transit: '',
+      cross_street: ''
+    },
+    entertainment: '',
+    specials: '',
+    private_dining: ''
+  }
+};
 /* harmony default export */ __webpack_exports__["default"] = (InfoMenu);
 
 /***/ }),
@@ -231,7 +321,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var icons = __webpack_require__(/*! ../img/icons.js */ "./client/src/img/icons.js").icons;
+var _require = __webpack_require__(/*! ../img/icons.js */ "./client/src/img/icons.js"),
+    icons = _require.icons;
 
 var Stars = function Stars(_ref) {
   var stars = _ref.stars;
@@ -275,6 +366,12 @@ var Stars = function Stars(_ref) {
   }, stars.toFixed(1)));
 };
 
+Stars.propTypes = {
+  stars: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+Stars.defaultProps = {
+  stars: 0
+};
 /* harmony default export */ __webpack_exports__["default"] = (Stars);
 
 /***/ }),
@@ -300,6 +397,12 @@ var Title = function Title(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurantName);
 };
 
+Title.propTypes = {
+  restaurantName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+Title.defaultProps = {
+  restaurantName: ''
+};
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
 /***/ }),
@@ -334,6 +437,12 @@ var TopTags = function TopTags(_ref) {
   }, "Top Tags:"), tagButtons);
 };
 
+TopTags.propTypes = {
+  restaurantTags: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string)
+};
+TopTags.defaultProps = {
+  restaurantTags: []
+};
 /* harmony default export */ __webpack_exports__["default"] = (TopTags);
 
 /***/ }),
@@ -376,10 +485,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TopTags_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TopTags.jsx */ "./client/src/components/TopTags.jsx");
 /* harmony import */ var _components_Description_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Description.jsx */ "./client/src/components/Description.jsx");
 /* harmony import */ var _components_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/RestaurantDetails.jsx */ "./client/src/components/RestaurantDetails.jsx");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./scss/base.scss */ "./client/src/scss/base.scss");
-/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -397,7 +504,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 
 
 

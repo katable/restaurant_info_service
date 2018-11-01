@@ -17,4 +17,16 @@ const Description = ({ restaurantDescription, expanded, toggleExpand }) => {
   );
 };
 
+Description.propTypes = {
+  restaurantDescription: PropTypes.string,
+  expanded: PropTypes.bool,
+  toggleExpand: PropTypes.func,
+};
+
+Description.defaultProps = {
+  restaurantDescription: '',
+  expanded: false,
+  toggleExpand: () => {},
+};
+
 export default Description;

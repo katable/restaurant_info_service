@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const icons = require('../img/icons.js').icons;
+const { icons } = require('../img/icons.js');
 
 const Stars = ({ stars }) => {
   const fullStar = <svg><path className="red" d={icons.star.full} /></svg>;
@@ -37,5 +37,14 @@ const Stars = ({ stars }) => {
     </div>
   );
 };
+
+Stars.propTypes = {
+  stars: PropTypes.number,
+};
+
+Stars.defaultProps = {
+  stars: 0,
+};
+
 
 export default Stars;

@@ -11,4 +11,13 @@ const TopTags = ({ restaurantTags }) => {
   );
 };
 
+TopTags.propTypes = {
+  restaurantTags: PropTypes.arrayOf(PropTypes.string),
+};
+
+TopTags.defaultProps = {
+  restaurantTags: [],
+};
+
+
 export default TopTags;

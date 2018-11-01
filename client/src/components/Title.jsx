@@ -7,4 +7,13 @@ const Title = ({ restaurantName }) => {
   );
 };
 
+Title.propTypes = {
+  restaurantName: PropTypes.string,
+};
+
+Title.defaultProps = {
+  restaurantName: '',
+};
+
+
 export default Title;

@@ -5,7 +5,6 @@ import InfoMenu from './components/InfoMenu.jsx';
 import TopTags from './components/TopTags.jsx';
 import Description from './components/Description.jsx';
 import RestaurantDetails from './components/RestaurantDetails.jsx';
-import PropTypes from 'prop-types';
 import './scss/base.scss';
 
 class App extends React.Component {
