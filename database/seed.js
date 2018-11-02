@@ -70,7 +70,13 @@ const RestaurantInfo = function RestaurantInfo() {
   const locZIP = faker.address.zipCode();
   const locNeighborhood = faker.random.arrayElement(neighborhoods);
   const crossStreet = faker.address.streetName();
+  const maps = [];
+  for (let i = 1; i <= 4; i += 1) {
+    maps.push(`https://s3-us-west-1.amazonaws.com/restaurant-info/googlemap${i}.png`);
+  }
+  const map = faker.random.arrayElement(maps);
   this.location = {
+    map,
     street: locStreet,
     city: locCity,
     state: locState,
@@ -111,7 +117,7 @@ const RestaurantInfo = function RestaurantInfo() {
   }
 
   if (percentBool(10)) {
-    this.privateDining = faker.lorem.paragraph();
+    this.private_dining = faker.lorem.paragraph();
   }
 };
 

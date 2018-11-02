@@ -5,6 +5,7 @@ import InfoMenu from './components/InfoMenu.jsx';
 import TopTags from './components/TopTags.jsx';
 import Description from './components/Description.jsx';
 import RestaurantDetails from './components/RestaurantDetails.jsx';
+import PrivateDining from './components/PrivateDining.jsx';
 import './scss/base.scss';
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
           contact: '',
         },
         location: {
+          map: '',
           street: '',
           city: '',
           state: '',
@@ -59,7 +61,7 @@ class App extends React.Component {
   }
 
   getRestaurantInfo() {
-    fetch('/restaurant/profile/1')
+    fetch('/restaurant/profile/17')
       .then(res => res.json())
       .then((json) => {
         this.setState({
@@ -69,19 +71,27 @@ class App extends React.Component {
   }
 
   toggleExpand() {
+    const { expanded } = this.state;
     this.setState({
-      expanded: !this.state.expanded,
+      expanded: !expanded,
     });
   }
 
   render() {
+    const { restaurantInfo } = this.state;
+    const { expanded } = this.state;
     return (
       <div id="overview-section">
-        <Title restaurantName={this.state.restaurantInfo.name} />
-        <InfoMenu restaurantInfo={this.state.restaurantInfo} />
-        <TopTags restaurantTags={this.state.restaurantInfo.tags.main} />
-        <Description restaurantDescription={this.state.restaurantInfo.description} expanded={this.state.expanded} toggleExpand={this.toggleExpand} />
-        <RestaurantDetails restaurantInfo={this.state.restaurantInfo} />
+        <Title restaurantName={restaurantInfo.name} />
+        <InfoMenu restaurantInfo={restaurantInfo} />
+        <TopTags restaurantTags={restaurantInfo.tags.main} />
+        <Description
+          restaurantDescription={restaurantInfo.description}
+          expanded={expanded}
+          toggleExpand={this.toggleExpand}
+        />
+        <RestaurantDetails restaurantInfo={restaurantInfo} />
+        <PrivateDining privateDining={restaurantInfo.private_dining} />
       </div>
     );
   }

@@ -27,6 +27,7 @@ const restaurantInfoSchema = mongoose.Schema({
     contact: String,
   },
   location: {
+    map: String,
     street: String,
     city: String,
     state: String,

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600');
-// @import '../../node_modules/ottheme-icons/token.scss';
 $opentable-red: #da3743;
 $grey: #d8d9db;
 $star-grey: #e1e1e1;
+$icon: #2D333F;
 
 body {
   font-family: 'Josefin Sans', sans-serif;
@@ -52,7 +52,6 @@ svg {
   }
   .stars, .price, .cuisine {
     display: flex;
-    // align-items: center;
   }
   .stars {
     .icons {
@@ -104,6 +103,9 @@ svg {
   margin-bottom: 2rem;
   #description-text {
     margin-bottom: 1rem;
+    p {
+      margin-top: 0;
+    }
   }
   .collapsed-p {
     height: 63px;
@@ -116,6 +118,70 @@ svg {
     color: $opentable-red;
     &:hover {
       text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.restaurant-details {
+  display: flex;
+  align-items: flex-start;
+  .left-items, .right-items {
+    width: 45%;
+    padding: 0;
+  }
+  .left-items {
+    margin-right: 1rem;
+  }
+  .right-items {
+    margin-left: 1rem;
+    .map {
+      margin: 0 0 1rem;
+    }
+  }
+  .detail-icon {
+    display: inline;
+  }
+  .detail-item {
+    display: flex;
+    font-size: 0.875em;
+    align-items: flex-start;
+    .item-info {
+      display: inline-block;
+      margin: 0 0 1rem;
+      .item-details {
+        font-weight: 300;
+        &.website-link, &.address-link {
+          color: $opentable-red;
+          cursor: pointer;
+        }
+        &.address-link {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+#private-dining {
+  margin: 2rem 0 0;
+  h2 {
+    font-size: 0.875em;
+    margin-bottom: 0.25rem;
+  }
+  p, .private-dining-button {
+    font-size: 1em;
+    font-weight: 300;
+  }
+  .private-dining-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid $grey;
+    font-size: 0.875em;
+    font-weight: 400;
+    width: fit-content;
+    &:hover {
+      border: 2px solid $opentable-red;
+      padding: calc(0.5rem - 1px) calc(1rem - 1px);
       cursor: pointer;
     }
   }
