@@ -183,9 +183,11 @@ function (_React$Component) {
         specials: '',
         private_dining: ''
       },
-      expanded: false
+      expanded: false,
+      expandContent: false
     };
-    _this.toggleExpand = _this.toggleExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.toggleDescriptionExpand = _this.toggleDescriptionExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.toggleContentExpand = _this.toggleContentExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -208,18 +210,28 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "toggleExpand",
-    value: function toggleExpand() {
+    key: "toggleDescriptionExpand",
+    value: function toggleDescriptionExpand() {
       var expanded = this.state.expanded;
       this.setState({
         expanded: !expanded
       });
     }
   }, {
+    key: "toggleContentExpand",
+    value: function toggleContentExpand() {
+      var expandContent = this.state.expandContent;
+      this.setState({
+        expandContent: !expandContent
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var restaurantInfo = this.state.restaurantInfo;
-      var expanded = this.state.expanded;
+      var _this$state = this.state,
+          restaurantInfo = _this$state.restaurantInfo,
+          expanded = _this$state.expanded,
+          expandContent = _this$state.expandContent;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "overview-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Title_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -231,12 +243,22 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Description_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
         restaurantDescription: restaurantInfo.description,
         expanded: expanded,
-        toggleExpand: this.toggleExpand
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        toggleDescriptionExpand: this.toggleDescriptionExpand
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "details",
+        className: expandContent ? 'auto-height' : false
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
         restaurantInfo: restaurantInfo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
         privateDining: restaurantInfo.private_dining
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: expandContent ? 'hide' : 'transparent'
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "all-details-button",
+        role: "presentation",
+        onClick: this.toggleContentExpand,
+        className: expandContent ? 'hide-all-details-button' : 'false'
+      }, "View all details")));
     }
   }]);
 
@@ -266,7 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 var Description = function Description(_ref) {
   var restaurantDescription = _ref.restaurantDescription,
       expanded = _ref.expanded,
-      toggleExpand = _ref.toggleExpand;
+      toggleDescriptionExpand = _ref.toggleDescriptionExpand;
   var descriptionParagraphs = restaurantDescription.split('\n').map(function (paragraph) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       key: Math.floor(Math.random() * 99999)
@@ -277,7 +299,7 @@ var Description = function Description(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     role: "presentation",
     className: "expand-description",
-    onClick: toggleExpand
+    onClick: toggleDescriptionExpand
   }, expanded ? '- Read less' : '+ Read more'));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "description"
@@ -290,12 +312,12 @@ var Description = function Description(_ref) {
 Description.propTypes = {
   restaurantDescription: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   expanded: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  toggleExpand: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  toggleDescriptionExpand: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 };
 Description.defaultProps = {
   restaurantDescription: '',
   expanded: false,
-  toggleExpand: function toggleExpand() {}
+  toggleDescriptionExpand: function toggleDescriptionExpand() {}
 };
 /* harmony default export */ __webpack_exports__["default"] = (Description);
 
@@ -978,7 +1000,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#overview-section {\n  padding: 2rem 1rem 4rem;\n  width: 640px; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .red {\n    fill: #da3743; }\n  svg .grey {\n    fill: #e1e1e1; }\n  svg .nofill {\n    fill: none; }\n\n#info-menu {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #info-menu .review-container, #info-menu .reviews {\n    display: flex; }\n  #info-menu .stars, #info-menu .price, #info-menu .cuisine {\n    display: flex; }\n  #info-menu .stars .icons {\n    display: inline-block; }\n  #info-menu .stars svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #info-menu .review-text, #info-menu .price-text, #info-menu .cuisine-text, #info-menu .stars-text {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #info-menu .stars-text {\n    margin-left: 0.35rem; }\n\n#top-tags {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #top-tags .tag-text {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #top-tags .tag-button {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #top-tags .tag-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n#description {\n  font-size: 1em;\n  font-weight: 300;\n  width: 90%;\n  margin-bottom: 2rem; }\n  #description #description-text {\n    margin-bottom: 1rem; }\n    #description #description-text p {\n      margin-top: 0; }\n  #description .collapsed-p {\n    height: 63px;\n    overflow: hidden; }\n  #description .expanded-p {\n    height: auto; }\n  #description .expand-description {\n    color: #da3743; }\n    #description .expand-description:hover {\n      text-decoration: underline;\n      cursor: pointer; }\n\n.restaurant-details {\n  display: flex;\n  align-items: flex-start; }\n  .restaurant-details .left-items, .restaurant-details .right-items {\n    width: 45%;\n    padding: 0; }\n  .restaurant-details .left-items {\n    margin-right: 1rem; }\n  .restaurant-details .right-items {\n    margin-left: 1rem; }\n    .restaurant-details .right-items .map {\n      margin: 0 0 1rem; }\n  .restaurant-details .detail-icon {\n    display: inline; }\n  .restaurant-details .detail-item {\n    display: flex;\n    font-size: 0.875em;\n    align-items: flex-start; }\n    .restaurant-details .detail-item .item-info {\n      display: inline-block;\n      margin: 0 0 1rem; }\n      .restaurant-details .detail-item .item-info .item-details {\n        font-weight: 300; }\n        .restaurant-details .detail-item .item-info .item-details.website-link, .restaurant-details .detail-item .item-info .item-details.address-link {\n          color: #da3743;\n          cursor: pointer; }\n        .restaurant-details .detail-item .item-info .item-details.address-link {\n          font-weight: 400; }\n\n#private-dining {\n  margin: 2rem 0 0; }\n  #private-dining h2 {\n    font-size: 0.875em;\n    margin-bottom: 0.25rem; }\n  #private-dining p, #private-dining .private-dining-button {\n    font-size: 1em;\n    font-weight: 300; }\n  #private-dining .private-dining-button {\n    padding: 0.5rem 1rem;\n    border: 1px solid #d8d9db;\n    font-size: 0.875em;\n    font-weight: 400;\n    width: fit-content; }\n    #private-dining .private-dining-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#overview-section {\n  padding: 2rem 1rem 4rem;\n  width: 640px; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .red {\n    fill: #da3743; }\n  svg .grey {\n    fill: #e1e1e1; }\n  svg .nofill {\n    fill: none; }\n\n#info-menu {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #info-menu .review-container, #info-menu .reviews {\n    display: flex; }\n  #info-menu .stars, #info-menu .price, #info-menu .cuisine {\n    display: flex; }\n  #info-menu .stars .icons {\n    display: inline-block; }\n  #info-menu .stars svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #info-menu .review-text, #info-menu .price-text, #info-menu .cuisine-text, #info-menu .stars-text {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #info-menu .stars-text {\n    margin-left: 0.35rem; }\n\n#top-tags {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #top-tags .tag-text {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #top-tags .tag-button {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #top-tags .tag-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n#description {\n  font-size: 1em;\n  font-weight: 300;\n  width: 90%;\n  margin-bottom: 2rem; }\n  #description #description-text {\n    margin-bottom: 1rem; }\n    #description #description-text p {\n      margin-top: 0; }\n  #description .collapsed-p {\n    height: 63px;\n    overflow: hidden; }\n  #description .expanded-p {\n    height: auto; }\n  #description .expand-description {\n    color: #da3743; }\n    #description .expand-description:hover {\n      text-decoration: underline;\n      cursor: pointer; }\n\n#details {\n  height: 375px;\n  overflow: hidden;\n  position: relative; }\n  #details.auto-height {\n    height: auto;\n    overflow: visible; }\n  #details .transparent {\n    content: \" \";\n    z-index: 10;\n    display: block;\n    text-align: center;\n    position: absolute;\n    height: 200px;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    background-image: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));\n    background-color: rgba(255, 255, 255, 0.2); }\n\n#all-details-button {\n  bottom: 0;\n  position: relative;\n  text-align: center;\n  margin: 0 auto;\n  padding: 0.75rem calc(1rem - 1px);\n  border: 1px solid #d8d9db;\n  font-size: 1em;\n  font-weight: 400;\n  width: 18rem; }\n  #all-details-button:hover {\n    border: 2px solid #da3743;\n    padding: calc(0.75rem - 1px) calc(1rem - 2px);\n    cursor: pointer; }\n  #all-details-button.hide-all-details-button {\n    display: none; }\n\n.restaurant-details {\n  display: flex;\n  align-items: flex-start;\n  position: relative; }\n  .restaurant-details .left-items, .restaurant-details .right-items {\n    width: 45%;\n    padding: 0; }\n  .restaurant-details .left-items {\n    margin-right: 1rem; }\n  .restaurant-details .right-items {\n    margin-left: 1rem; }\n    .restaurant-details .right-items .map {\n      margin: 0 0 1rem; }\n  .restaurant-details .detail-icon {\n    display: inline; }\n  .restaurant-details .detail-item {\n    display: flex;\n    font-size: 0.875em;\n    align-items: flex-start; }\n    .restaurant-details .detail-item .item-info {\n      display: inline-block;\n      margin: 0 0 1rem; }\n      .restaurant-details .detail-item .item-info .item-details {\n        font-weight: 300; }\n        .restaurant-details .detail-item .item-info .item-details.website-link, .restaurant-details .detail-item .item-info .item-details.address-link {\n          color: #da3743;\n          cursor: pointer; }\n        .restaurant-details .detail-item .item-info .item-details.address-link {\n          font-weight: 400; }\n\n#private-dining {\n  margin: 2rem 0 0; }\n  #private-dining h2 {\n    font-size: 0.875em;\n    margin-bottom: 0.25rem; }\n  #private-dining p, #private-dining .private-dining-button {\n    font-size: 1em;\n    font-weight: 300; }\n  #private-dining .private-dining-button {\n    padding: 0.5rem 1rem;\n    border: 1px solid #d8d9db;\n    font-size: 0.875em;\n    font-weight: 400;\n    width: fit-content; }\n    #private-dining .private-dining-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n.expand-content {\n  height: auto; }\n\n.collapse-content {\n  height: 800px;\n  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), white);\n  overflow: hidden; }\n", ""]);
 
 // exports
 

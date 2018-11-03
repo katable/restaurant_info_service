@@ -51,8 +51,10 @@ class App extends React.Component {
         private_dining: '',
       },
       expanded: false,
+      expandContent: false,
     };
-    this.toggleExpand = this.toggleExpand.bind(this);
+    this.toggleDescriptionExpand = this.toggleDescriptionExpand.bind(this);
+    this.toggleContentExpand = this.toggleContentExpand.bind(this);    
   }
 
   componentDidMount() {
@@ -69,16 +71,22 @@ class App extends React.Component {
       });
   }
 
-  toggleExpand() {
+  toggleDescriptionExpand() {
     const { expanded } = this.state;
     this.setState({
       expanded: !expanded,
     });
   }
 
+  toggleContentExpand() {
+    const { expandContent } = this.state;
+    this.setState({
+      expandContent: !expandContent,
+    });
+  }
+
   render() {
-    const { restaurantInfo } = this.state;
-    const { expanded } = this.state;
+    const { restaurantInfo, expanded, expandContent } = this.state;
     return (
       <div id="overview-section">
         <Title restaurantName={restaurantInfo.name} />
@@ -87,10 +95,16 @@ class App extends React.Component {
         <Description
           restaurantDescription={restaurantInfo.description}
           expanded={expanded}
-          toggleExpand={this.toggleExpand}
+          toggleDescriptionExpand={this.toggleDescriptionExpand}
         />
-        <RestaurantDetails restaurantInfo={restaurantInfo} />
-        <PrivateDining privateDining={restaurantInfo.private_dining} />
+        <div>
+          <div id="details" className={expandContent ? 'auto-height' : false}>
+            <RestaurantDetails restaurantInfo={restaurantInfo} />
+            <PrivateDining privateDining={restaurantInfo.private_dining} />
+            <div className={expandContent ? 'hide' : 'transparent'} />
+          </div>
+          <div id="all-details-button" role="presentation" onClick={this.toggleContentExpand} className={expandContent ? 'hide-all-details-button' : 'false'}>View all details</div>
+        </div>
       </div>
     );
   }

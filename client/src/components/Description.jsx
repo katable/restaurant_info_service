@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Description = ({ restaurantDescription, expanded, toggleExpand }) => {
+const Description = ({ restaurantDescription, expanded, toggleDescriptionExpand }) => {
   const descriptionParagraphs = restaurantDescription.split('\n').map(paragraph => (
     <p key={Math.floor(Math.random() * 99999)}>{paragraph}</p>
   ));
   const expandCollapseDiv = (
     <div className="expand-collapse-link">
-      <div role="presentation" className="expand-description" onClick={toggleExpand}>
+      <div role="presentation" className="expand-description" onClick={toggleDescriptionExpand}>
         {expanded ? '- Read less' : '+ Read more'}
       </div>
     </div>
@@ -27,13 +27,13 @@ const Description = ({ restaurantDescription, expanded, toggleExpand }) => {
 Description.propTypes = {
   restaurantDescription: PropTypes.string,
   expanded: PropTypes.bool,
-  toggleExpand: PropTypes.func,
+  toggleDescriptionExpand: PropTypes.func,
 };
 
 Description.defaultProps = {
   restaurantDescription: '',
   expanded: false,
-  toggleExpand: () => {},
+  toggleDescriptionExpand: () => {},
 };
 
 export default Description;
