@@ -27,6 +27,20 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       }],
+    },
+    {
+      test: /\.svg$/,
+      use: [
+        'svg-react-loader',
+        {
+          loader: 'svgo-loader',
+          options: {
+            plugins: [
+              { cleanupAttrs: true },
+            ],
+          },
+        },
+      ],
     }],
   },
   devtool: 'source-map',

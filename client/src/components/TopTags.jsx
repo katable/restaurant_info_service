@@ -19,5 +19,4 @@ TopTags.defaultProps = {
   restaurantTags: [],
 };
 
-
 export default TopTags;

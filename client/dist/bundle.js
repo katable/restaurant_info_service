@@ -86,6 +86,167 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/src/components/App.jsx":
+/*!***************************************!*\
+  !*** ./client/src/components/App.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Title_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Title.jsx */ "./client/src/components/Title.jsx");
+/* harmony import */ var _InfoMenu_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InfoMenu.jsx */ "./client/src/components/InfoMenu.jsx");
+/* harmony import */ var _TopTags_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TopTags.jsx */ "./client/src/components/TopTags.jsx");
+/* harmony import */ var _Description_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Description.jsx */ "./client/src/components/Description.jsx");
+/* harmony import */ var _RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RestaurantDetails.jsx */ "./client/src/components/RestaurantDetails.jsx");
+/* harmony import */ var _PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PrivateDining.jsx */ "./client/src/components/PrivateDining.jsx");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_7__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+
+
+
+
+
+
+var App =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App(props) {
+    var _this;
+
+    _classCallCheck(this, App);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      restaurantInfo: {
+        restaurant_id: 0,
+        name: '',
+        stars: 0,
+        reviews: 0,
+        price: 0,
+        cuisine: [],
+        description: '',
+        style: '',
+        tags: {
+          main: [],
+          additional: []
+        },
+        hours: '',
+        phone: '',
+        website: '',
+        payment: [],
+        dress: '',
+        chef: '',
+        catering: '',
+        private_party: {
+          facilities: '',
+          contact: ''
+        },
+        location: {
+          map: '',
+          street: '',
+          city: '',
+          state: '',
+          zip: '',
+          neighborhood: '',
+          parking_details: '',
+          public_transit: '',
+          cross_street: ''
+        },
+        entertainment: '',
+        specials: '',
+        private_dining: ''
+      },
+      expanded: false
+    };
+    _this.toggleExpand = _this.toggleExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getRestaurantInfo();
+    }
+  }, {
+    key: "getRestaurantInfo",
+    value: function getRestaurantInfo() {
+      var _this2 = this;
+
+      fetch('/restaurant/profile/17').then(function (res) {
+        return res.json();
+      }).then(function (json) {
+        _this2.setState({
+          restaurantInfo: json
+        });
+      });
+    }
+  }, {
+    key: "toggleExpand",
+    value: function toggleExpand() {
+      var expanded = this.state.expanded;
+      this.setState({
+        expanded: !expanded
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var restaurantInfo = this.state.restaurantInfo;
+      var expanded = this.state.expanded;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "overview-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Title_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        restaurantName: restaurantInfo.name
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoMenu_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        restaurantInfo: restaurantInfo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TopTags_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        restaurantTags: restaurantInfo.tags.main
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Description_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        restaurantDescription: restaurantInfo.description,
+        expanded: expanded,
+        toggleExpand: this.toggleExpand
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        restaurantInfo: restaurantInfo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        privateDining: restaurantInfo.private_dining
+      }));
+    }
+  }]);
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
 /***/ "./client/src/components/Description.jsx":
 /*!***********************************************!*\
   !*** ./client/src/components/Description.jsx ***!
@@ -720,6 +881,8 @@ TopTags.defaultProps = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// Putting this import statement here, might refactor later to use actual svgs instead of paths
+// import Icon from 'svg-react-loader?name=Icon!../img/ic_accessibility.svg';
 var icons = {
   star: {
     full: 'M3.213 15.984c-.063 0-.104-.01-.125-.031-.104-.063-.136-.136-.094-.219l.876-5.516L.083 6.331C0 6.247-.021 6.164.021 6.08c.021-.063.083-.115.188-.157l5.256-.783L7.781.125C7.864.042 7.937 0 8 0c.104 0 .177.042.219.125l2.347 5.015 5.226.784a.282.282 0 0 1 .188.157c.041.083.02.166-.063.25l-3.786 3.886.907 5.516a.297.297 0 0 1-.094.219c-.104.063-.188.063-.25 0L8 13.383l-4.662 2.57c-.021.021-.063.031-.125.031z',
@@ -756,7 +919,7 @@ module.exports.icons = icons;
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
   \******************************/
-/*! exports provided: default */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -765,155 +928,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Title_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Title.jsx */ "./client/src/components/Title.jsx");
-/* harmony import */ var _components_InfoMenu_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/InfoMenu.jsx */ "./client/src/components/InfoMenu.jsx");
-/* harmony import */ var _components_TopTags_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TopTags.jsx */ "./client/src/components/TopTags.jsx");
-/* harmony import */ var _components_Description_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Description.jsx */ "./client/src/components/Description.jsx");
-/* harmony import */ var _components_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/RestaurantDetails.jsx */ "./client/src/components/RestaurantDetails.jsx");
-/* harmony import */ var _components_PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/PrivateDining.jsx */ "./client/src/components/PrivateDining.jsx");
-/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./scss/base.scss */ "./client/src/scss/base.scss");
-/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_8__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App.jsx */ "./client/src/components/App.jsx");
 
 
 
-
-
-
-
-
-
-
-
-var App =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App(props) {
-    var _this;
-
-    _classCallCheck(this, App);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
-    _this.state = {
-      restaurantInfo: {
-        restaurant_id: 0,
-        name: '',
-        stars: 0,
-        reviews: 0,
-        price: 0,
-        cuisine: [],
-        description: '',
-        style: '',
-        tags: {
-          main: [],
-          additional: []
-        },
-        hours: '',
-        phone: '',
-        website: '',
-        payment: [],
-        dress: '',
-        chef: '',
-        catering: '',
-        private_party: {
-          facilities: '',
-          contact: ''
-        },
-        location: {
-          map: '',
-          street: '',
-          city: '',
-          state: '',
-          zip: '',
-          neighborhood: '',
-          parking_details: '',
-          public_transit: '',
-          cross_street: ''
-        },
-        entertainment: '',
-        specials: '',
-        private_dining: ''
-      },
-      expanded: false
-    };
-    _this.toggleExpand = _this.toggleExpand.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    return _this;
-  }
-
-  _createClass(App, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.getRestaurantInfo();
-    }
-  }, {
-    key: "getRestaurantInfo",
-    value: function getRestaurantInfo() {
-      var _this2 = this;
-
-      fetch('/restaurant/profile/17').then(function (res) {
-        return res.json();
-      }).then(function (json) {
-        _this2.setState({
-          restaurantInfo: json
-        });
-      });
-    }
-  }, {
-    key: "toggleExpand",
-    value: function toggleExpand() {
-      var expanded = this.state.expanded;
-      this.setState({
-        expanded: !expanded
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var restaurantInfo = this.state.restaurantInfo;
-      var expanded = this.state.expanded;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "overview-section"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        restaurantName: restaurantInfo.name
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InfoMenu_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        restaurantInfo: restaurantInfo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TopTags_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        restaurantTags: restaurantInfo.tags.main
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Description_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        restaurantDescription: restaurantInfo.description,
-        expanded: expanded,
-        toggleExpand: this.toggleExpand
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        restaurantInfo: restaurantInfo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        privateDining: restaurantInfo.private_dining
-      }));
-    }
-  }]);
-
-  return App;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('app'));
 
 /***/ }),
 
