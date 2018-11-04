@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TopTags = ({ restaurantTags }) => {
-  const tagButtons = restaurantTags.map(tagButton => <div className="tag-button">{tagButton}</div>);
+  const tagButtons = restaurantTags.map((tagButton, i) => <div className="tag-button" key={tagButton[i]}>{tagButton}</div>);
   return (
     <div id="top-tags">
       <div className="tag-text">Top Tags:</div>
@@ -18,6 +18,5 @@ TopTags.propTypes = {
 TopTags.defaultProps = {
   restaurantTags: [],
 };
-
 
 export default TopTags;
