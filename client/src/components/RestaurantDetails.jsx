@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DetailItem from './DetailItem.jsx';
+import styles from '../scss/base.scss';
 
 const { icons } = require('../img/icons.js');
 
@@ -89,12 +90,12 @@ const RestaurantDetails = (props) => {
   );
 
   return (
-    <div className="restaurant-details">
-      <div className="left-items">
+    <div className={styles.restaurantDetails}>
+      <div className={styles.leftItems}>
         {leftItems}
       </div>
-      <div className="right-items">
-        <img src={location.map} alt="Map" className="map" />
+      <div className={styles.rightItems}>
+        <img src={location.map} alt="Map" className={styles.map} />
         {rightItems}
       </div>
     </div>

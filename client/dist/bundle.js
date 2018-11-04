@@ -233,7 +233,7 @@ function (_React$Component) {
           expanded = _this$state.expanded,
           expandContent = _this$state.expandContent;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "overview-section"
+        id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.overviewSection
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Title_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         restaurantName: restaurantInfo.name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoMenu_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -245,19 +245,19 @@ function (_React$Component) {
         expanded: expanded,
         toggleDescriptionExpand: this.toggleDescriptionExpand
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "details",
-        className: expandContent ? 'auto-height' : false
+        id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.details,
+        className: expandContent ? _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.autoHeight : 'false'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RestaurantDetails_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
         restaurantInfo: restaurantInfo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PrivateDining_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
         privateDining: restaurantInfo.private_dining
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: expandContent ? 'hide' : 'transparent'
+        className: expandContent ? _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.hide : _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.transparent
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "all-details-button",
+        id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.allDetailsButton,
         role: "presentation",
         onClick: this.toggleContentExpand,
-        className: expandContent ? 'hide-all-details-button' : 'false'
+        className: expandContent ? _scss_base_scss__WEBPACK_IMPORTED_MODULE_7___default.a.hideAllDetailsButton : 'false'
       }, "View all details")));
     }
   }]);
@@ -282,6 +282,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -298,14 +301,14 @@ var Description = function Description(_ref) {
     className: "expand-collapse-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     role: "presentation",
-    className: "expand-description",
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.expandDescription,
     onClick: toggleDescriptionExpand
   }, expanded ? '- Read less' : '+ Read more'));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "description"
+    id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.description
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "description-text",
-    className: expanded ? 'expanded-p' : 'collapsed-p'
+    id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.descriptionText,
+    className: expanded ? _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.expandedP : _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.collapsedP
   }, descriptionParagraphs), descriptionParagraphs.length > 1 && expandCollapseDiv);
 };
 
@@ -336,6 +339,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -348,23 +354,23 @@ var DetailItem = function DetailItem(_ref) {
     var link;
 
     if (title === 'Address') {
-      link = 'item-details address-link';
+      link = "".concat(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.itemDetails, " ").concat(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.addressLink);
     } else if (title === 'Website') {
-      link = 'item-details website-link';
+      link = "".concat(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.itemDetails, " ").concat(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.websiteLink);
     } else {
-      link = 'item-details';
+      link = "".concat(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.itemDetails);
     }
 
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "detail-item"
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.detailItem
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "detail-icon"
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.detailIcon
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
       d: icon
     }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "item-info"
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.itemInfo
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "item-title"
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.itemTitle
     }, title === 'Address' ? '' : title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: link
     }, details)));
@@ -401,6 +407,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Stars_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stars.jsx */ "./client/src/components/Stars.jsx");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -424,29 +433,29 @@ var InfoMenu = function InfoMenu(_ref) {
 
   var cuisine = restaurantInfo.cuisine[0];
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "info-menu"
+    id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.infoMenu
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Stars_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
     stars: stars
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "review-container"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.reviewContainer
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.reviews
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: icons.reviews
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "review-text"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.reviewText
   }, "".concat(reviews, " reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "price"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.price
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: icons.priceRange
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "price-text"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.priceText
   }, price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cuisine"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.cuisine
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: icons.cuisine
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cuisine-text"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.cuisineText
   }, cuisine)));
 };
 
@@ -547,15 +556,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
 var PrivateDining = function PrivateDining(_ref) {
   var privateDining = _ref.privateDining;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "private-dining"
+    id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.privateDining
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Private Dining"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, privateDining), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "private-dining-button"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.privateDiningButton
   }, "View Private Dining Details"));
 };
 
@@ -583,6 +595,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _DetailItem_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DetailItem.jsx */ "./client/src/components/DetailItem.jsx");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -648,15 +663,15 @@ var RestaurantDetails = function RestaurantDetails(props) {
     });
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "restaurant-details"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.restaurantDetails
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "left-items"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.leftItems
   }, leftItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "right-items"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.rightItems
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: location.map,
     alt: "Map",
-    className: "map"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_3___default.a.map
   }), rightItems));
 };
 
@@ -758,6 +773,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -772,7 +790,7 @@ var Stars = function Stars(_ref) {
     allStars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
       key: allStars.length
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-      className: "red",
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.red,
       d: icons.star.full
     })));
   }
@@ -781,10 +799,10 @@ var Stars = function Stars(_ref) {
     allStars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
       key: allStars.length
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-      className: "grey",
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.grey,
       d: icons.star.full
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-      className: "red",
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.red,
       d: icons.star.half
     })));
 
@@ -792,7 +810,7 @@ var Stars = function Stars(_ref) {
       allStars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         key: allStars.length
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        className: "grey",
+        className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.grey,
         d: icons.star.full
       })));
     }
@@ -801,16 +819,16 @@ var Stars = function Stars(_ref) {
       allStars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         key: allStars.length
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        className: "grey",
+        className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.grey,
         d: icons.star.full
       })));
     }
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stars"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.stars
   }, allStars, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stars-text"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.starsText
   }, stars.toFixed(1)));
 };
 
@@ -868,6 +886,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/base.scss */ "./client/src/scss/base.scss");
+/* harmony import */ var _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_base_scss__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -875,14 +896,14 @@ var TopTags = function TopTags(_ref) {
   var restaurantTags = _ref.restaurantTags;
   var tagButtons = restaurantTags.map(function (tagButton, i) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "tag-button",
+      className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.tagButton,
       key: tagButton[i]
     }, tagButton);
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "top-tags"
+    id: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.topTags
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "tag-text"
+    className: _scss_base_scss__WEBPACK_IMPORTED_MODULE_2___default.a.tagText
   }, "Top Tags:"), tagButtons);
 };
 
@@ -966,7 +987,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./base.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./base.scss */ "./node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -988,10 +1009,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss":
-/*!******************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss ***!
-  \******************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./node_modules/sass-loader/lib/loader.js!./client/src/scss/base.scss ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1000,10 +1021,53 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#overview-section {\n  padding: 2rem 1rem 4rem;\n  width: 640px; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .red {\n    fill: #da3743; }\n  svg .grey {\n    fill: #e1e1e1; }\n  svg .nofill {\n    fill: none; }\n\n#info-menu {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #info-menu .review-container, #info-menu .reviews {\n    display: flex; }\n  #info-menu .stars, #info-menu .price, #info-menu .cuisine {\n    display: flex; }\n  #info-menu .stars .icons {\n    display: inline-block; }\n  #info-menu .stars svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #info-menu .review-text, #info-menu .price-text, #info-menu .cuisine-text, #info-menu .stars-text {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #info-menu .stars-text {\n    margin-left: 0.35rem; }\n\n#top-tags {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #top-tags .tag-text {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #top-tags .tag-button {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #top-tags .tag-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n#description {\n  font-size: 1em;\n  font-weight: 300;\n  width: 90%;\n  margin-bottom: 2rem; }\n  #description #description-text {\n    margin-bottom: 1rem; }\n    #description #description-text p {\n      margin-top: 0; }\n  #description .collapsed-p {\n    height: 63px;\n    overflow: hidden; }\n  #description .expanded-p {\n    height: auto; }\n  #description .expand-description {\n    color: #da3743; }\n    #description .expand-description:hover {\n      text-decoration: underline;\n      cursor: pointer; }\n\n#details {\n  height: 375px;\n  overflow: hidden;\n  position: relative; }\n  #details.auto-height {\n    height: auto;\n    overflow: visible; }\n  #details .transparent {\n    content: \" \";\n    z-index: 10;\n    display: block;\n    text-align: center;\n    position: absolute;\n    height: 200px;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    background-image: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));\n    background-color: rgba(255, 255, 255, 0.2); }\n\n#all-details-button {\n  bottom: 0;\n  position: relative;\n  text-align: center;\n  margin: 0 auto;\n  padding: 0.75rem calc(1rem - 1px);\n  border: 1px solid #d8d9db;\n  font-size: 1em;\n  font-weight: 400;\n  width: 18rem; }\n  #all-details-button:hover {\n    border: 2px solid #da3743;\n    padding: calc(0.75rem - 1px) calc(1rem - 2px);\n    cursor: pointer; }\n  #all-details-button.hide-all-details-button {\n    display: none; }\n\n.restaurant-details {\n  display: flex;\n  align-items: flex-start;\n  position: relative; }\n  .restaurant-details .left-items, .restaurant-details .right-items {\n    width: 45%;\n    padding: 0; }\n  .restaurant-details .left-items {\n    margin-right: 1rem; }\n  .restaurant-details .right-items {\n    margin-left: 1rem; }\n    .restaurant-details .right-items .map {\n      margin: 0 0 1rem; }\n  .restaurant-details .detail-icon {\n    display: inline; }\n  .restaurant-details .detail-item {\n    display: flex;\n    font-size: 0.875em;\n    align-items: flex-start; }\n    .restaurant-details .detail-item .item-info {\n      display: inline-block;\n      margin: 0 0 1rem; }\n      .restaurant-details .detail-item .item-info .item-details {\n        font-weight: 300; }\n        .restaurant-details .detail-item .item-info .item-details.website-link, .restaurant-details .detail-item .item-info .item-details.address-link {\n          color: #da3743;\n          cursor: pointer; }\n        .restaurant-details .detail-item .item-info .item-details.address-link {\n          font-weight: 400; }\n\n#private-dining {\n  margin: 2rem 0 0; }\n  #private-dining h2 {\n    font-size: 0.875em;\n    margin-bottom: 0.25rem; }\n  #private-dining p, #private-dining .private-dining-button {\n    font-size: 1em;\n    font-weight: 300; }\n  #private-dining .private-dining-button {\n    padding: 0.5rem 1rem;\n    border: 1px solid #d8d9db;\n    font-size: 0.875em;\n    font-weight: 400;\n    width: fit-content; }\n    #private-dining .private-dining-button:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n.expand-content {\n  height: auto; }\n\n.collapse-content {\n  height: 800px;\n  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), white);\n  overflow: hidden; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 16px; }\n\n#base__overviewSection___1VmOH {\n  padding: 2rem 1rem 4rem;\n  width: 640px; }\n\nh1 {\n  border-bottom: 1px solid #d8d9db;\n  font-size: 3em;\n  font-weight: 400;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  padding-bottom: 2rem; }\n\nsvg {\n  display: inline-block;\n  margin-right: 0.2rem;\n  width: 1.5rem;\n  height: 1.5rem; }\n  svg .base__red___1K9UD {\n    fill: #da3743; }\n  svg .base__grey___2d6x1 {\n    fill: #e1e1e1; }\n  svg .base__nofill___2D2uV {\n    fill: none; }\n\n#base__infoMenu___3a-0c {\n  font-size: 0.875em;\n  height: 1.5rem;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n  font-weight: 400; }\n  #base__infoMenu___3a-0c .base__reviewContainer___KJmQv, #base__infoMenu___3a-0c .base__reviews___37ygN {\n    display: flex; }\n  #base__infoMenu___3a-0c .base__stars___3KuYs, #base__infoMenu___3a-0c .base__price___1Us5x, #base__infoMenu___3a-0c .base__cuisine___iRRi2 {\n    display: flex; }\n  #base__infoMenu___3a-0c .base__stars___3KuYs .base__icons___1MfH2 {\n    display: inline-block; }\n  #base__infoMenu___3a-0c .base__stars___3KuYs svg {\n    height: 1rem;\n    width: 1rem;\n    margin: 0; }\n  #base__infoMenu___3a-0c .base__reviewText___12Y9X, #base__infoMenu___3a-0c .base__priceText___3NpBF, #base__infoMenu___3a-0c .base__cuisineText___1liak, #base__infoMenu___3a-0c .base__starsText___2kRgi {\n    margin-right: 0.5rem;\n    display: flex;\n    align-self: center; }\n  #base__infoMenu___3a-0c .base__starsText___2kRgi {\n    margin-left: 0.35rem; }\n\n#base__topTags___2iZnP {\n  display: flex;\n  align-items: center;\n  margin-bottom: 2rem; }\n  #base__topTags___2iZnP .base__tagText___1czEB {\n    display: flex;\n    font-size: 1.125em;\n    margin-right: 0.5rem; }\n  #base__topTags___2iZnP .base__tagButton___y92SJ {\n    border: 1px solid #d8d9db;\n    border-radius: 1rem;\n    margin-right: 0.5rem;\n    padding: 0.5rem 1rem;\n    font-size: 0.875em; }\n    #base__topTags___2iZnP .base__tagButton___y92SJ:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n#base__description___Kxiyp {\n  font-size: 1em;\n  font-weight: 300;\n  width: 90%;\n  margin-bottom: 2rem; }\n  #base__description___Kxiyp #base__descriptionText___3-kvG {\n    margin-bottom: 1rem; }\n    #base__description___Kxiyp #base__descriptionText___3-kvG p {\n      margin-top: 0; }\n  #base__description___Kxiyp .base__collapsedP___3qOx1 {\n    height: 63px;\n    overflow: hidden; }\n  #base__description___Kxiyp .base__expandedP___sdDvS {\n    height: auto; }\n  #base__description___Kxiyp .base__expandDescription___1thBg {\n    color: #da3743; }\n    #base__description___Kxiyp .base__expandDescription___1thBg:hover {\n      text-decoration: underline;\n      cursor: pointer; }\n\n#base__details___j-Vgd {\n  height: 375px;\n  overflow: hidden;\n  position: relative; }\n  #base__details___j-Vgd.base__autoHeight___3SjRu {\n    height: auto;\n    overflow: visible; }\n  #base__details___j-Vgd .base__transparent___3LQge {\n    content: \" \";\n    z-index: 10;\n    display: block;\n    text-align: center;\n    position: absolute;\n    height: 200px;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    background-image: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));\n    background-color: rgba(255, 255, 255, 0.2); }\n\n#base__allDetailsButton___3sSAr {\n  bottom: 0;\n  position: relative;\n  text-align: center;\n  margin: 0 auto;\n  padding: 1rem calc(1rem - 1px);\n  border: 1px solid #d8d9db;\n  font-size: 1em;\n  font-weight: 400;\n  width: 18rem; }\n  #base__allDetailsButton___3sSAr:hover {\n    border: 2px solid #da3743;\n    padding: calc(1rem - 1px) calc(1rem - 2px);\n    cursor: pointer; }\n  #base__allDetailsButton___3sSAr.base__hideAllDetailsButton___1jHWm {\n    display: none; }\n\n.base__restaurantDetails___2z4z1 {\n  display: flex;\n  align-items: flex-start;\n  position: relative; }\n  .base__restaurantDetails___2z4z1 .base__leftItems___3pUF6, .base__restaurantDetails___2z4z1 .base__rightItems___3QvzD {\n    width: 45%;\n    padding: 0; }\n  .base__restaurantDetails___2z4z1 .base__leftItems___3pUF6 {\n    margin-right: 1rem; }\n  .base__restaurantDetails___2z4z1 .base__rightItems___3QvzD {\n    margin-left: 1rem; }\n    .base__restaurantDetails___2z4z1 .base__rightItems___3QvzD .base__map___2M0hE {\n      margin: 0 0 1rem; }\n  .base__restaurantDetails___2z4z1 .base__detailIcon___3Xpck {\n    display: inline; }\n  .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc {\n    display: flex;\n    font-size: 0.875em;\n    align-items: flex-start; }\n    .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc .base__itemInfo___Dmzqy {\n      display: inline-block;\n      margin: 0 0 1rem; }\n      .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc .base__itemInfo___Dmzqy .base__itemDetails___3Kh_e {\n        font-weight: 300; }\n        .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc .base__itemInfo___Dmzqy .base__itemDetails___3Kh_e.base__websiteLink___1tEer, .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc .base__itemInfo___Dmzqy .base__itemDetails___3Kh_e.base__addressLink___VARv0 {\n          color: #da3743;\n          cursor: pointer; }\n        .base__restaurantDetails___2z4z1 .base__detailItem___1JgEc .base__itemInfo___Dmzqy .base__itemDetails___3Kh_e.base__addressLink___VARv0 {\n          font-weight: 400; }\n\n#base__privateDining___UFi2y {\n  margin: 2rem 0 0; }\n  #base__privateDining___UFi2y h2 {\n    font-size: 0.875em;\n    margin-bottom: 0.25rem; }\n  #base__privateDining___UFi2y p, #base__privateDining___UFi2y .base__privateDining-button___1Z6QB {\n    font-size: 1em;\n    font-weight: 300; }\n  #base__privateDining___UFi2y .base__privateDining-button___1Z6QB {\n    padding: 0.5rem 1rem;\n    border: 1px solid #d8d9db;\n    font-size: 0.875em;\n    font-weight: 400;\n    width: fit-content; }\n    #base__privateDining___UFi2y .base__privateDining-button___1Z6QB:hover {\n      border: 2px solid #da3743;\n      padding: calc(0.5rem - 1px) calc(1rem - 1px);\n      cursor: pointer; }\n\n.base__expandContent___2_uQ3 {\n  height: auto; }\n\n.base__collapseContent___2lJYr {\n  height: 800px;\n  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), white);\n  overflow: hidden; }\n", ""]);
 
 // exports
-
+exports.locals = {
+	"overviewSection": "base__overviewSection___1VmOH",
+	"red": "base__red___1K9UD",
+	"grey": "base__grey___2d6x1",
+	"nofill": "base__nofill___2D2uV",
+	"infoMenu": "base__infoMenu___3a-0c",
+	"reviewContainer": "base__reviewContainer___KJmQv",
+	"reviews": "base__reviews___37ygN",
+	"stars": "base__stars___3KuYs",
+	"price": "base__price___1Us5x",
+	"cuisine": "base__cuisine___iRRi2",
+	"icons": "base__icons___1MfH2",
+	"reviewText": "base__reviewText___12Y9X",
+	"priceText": "base__priceText___3NpBF",
+	"cuisineText": "base__cuisineText___1liak",
+	"starsText": "base__starsText___2kRgi",
+	"topTags": "base__topTags___2iZnP",
+	"tagText": "base__tagText___1czEB",
+	"tagButton": "base__tagButton___y92SJ",
+	"description": "base__description___Kxiyp",
+	"descriptionText": "base__descriptionText___3-kvG",
+	"collapsedP": "base__collapsedP___3qOx1",
+	"expandedP": "base__expandedP___sdDvS",
+	"expandDescription": "base__expandDescription___1thBg",
+	"details": "base__details___j-Vgd",
+	"autoHeight": "base__autoHeight___3SjRu",
+	"transparent": "base__transparent___3LQge",
+	"allDetailsButton": "base__allDetailsButton___3sSAr",
+	"hideAllDetailsButton": "base__hideAllDetailsButton___1jHWm",
+	"restaurantDetails": "base__restaurantDetails___2z4z1",
+	"leftItems": "base__leftItems___3pUF6",
+	"rightItems": "base__rightItems___3QvzD",
+	"map": "base__map___2M0hE",
+	"detailIcon": "base__detailIcon___3Xpck",
+	"detailItem": "base__detailItem___1JgEc",
+	"itemInfo": "base__itemInfo___Dmzqy",
+	"itemDetails": "base__itemDetails___3Kh_e",
+	"websiteLink": "base__websiteLink___1tEer",
+	"addressLink": "base__addressLink___VARv0",
+	"privateDining": "base__privateDining___UFi2y",
+	"privateDining-button": "base__privateDining-button___1Z6QB",
+	"expandContent": "base__expandContent___2_uQ3",
+	"collapseContent": "base__collapseContent___2lJYr"
+};
 
 /***/ }),
 

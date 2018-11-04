@@ -9,7 +9,7 @@ body {
   font-size: 16px;
 }
 
-#overview-section {
+#overviewSection {
   padding: 2rem 1rem 4rem;
   width: 640px;
 }
@@ -39,7 +39,7 @@ svg {
   }
 }
 
-#info-menu {
+#infoMenu {
   font-size: 0.875em;
   height: 1.5rem;
   width: 100%;
@@ -47,7 +47,7 @@ svg {
   align-items: center;
   margin-bottom: 1rem;
   font-weight: 400;
-  .review-container, .reviews {
+  .reviewContainer, .reviews {
     display: flex;
   }
   .stars, .price, .cuisine {
@@ -63,26 +63,26 @@ svg {
       margin: 0;
     }
   }
-  .review-text, .price-text, .cuisine-text, .stars-text {
+  .reviewText, .priceText, .cuisineText, .starsText {
     margin-right: 0.5rem;
     display: flex;
     align-self: center;
   }
-  .stars-text {
+  .starsText {
     margin-left: 0.35rem;
   }
 }
 
-#top-tags {
+#topTags {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
-  .tag-text {
+  .tagText {
     display: flex;
     font-size: 1.125em;
     margin-right: 0.5rem;
   }
-  .tag-button {
+  .tagButton {
     border: 1px solid $grey;
     border-radius: 1rem;
     margin-right: 0.5rem;
@@ -101,20 +101,20 @@ svg {
   font-weight: 300;
   width: 90%;
   margin-bottom: 2rem;
-  #description-text {
+  #descriptionText {
     margin-bottom: 1rem;
     p {
       margin-top: 0;
     }
   }
-  .collapsed-p {
+  .collapsedP {
     height: 63px;
     overflow: hidden;
   }
-  .expanded-p {
+  .expandedP {
     height: auto;
   }
-  .expand-description {
+  .expandDescription {
     color: $opentable-red;
     &:hover {
       text-decoration: underline;
@@ -127,7 +127,7 @@ svg {
   height: 375px;
   overflow: hidden;
   position: relative;  
-  &.auto-height {
+  &.autoHeight {
     height: auto;
     overflow: visible;
   }
@@ -147,60 +147,60 @@ svg {
   }
 }
 
-#all-details-button {
+#allDetailsButton {
   bottom: 0;
   position: relative;
   text-align: center;
   margin: 0 auto;
-  padding: 0.75rem calc(1rem - 1px);
+  padding: 1rem calc(1rem - 1px);
   border: 1px solid $grey;
   font-size: 1em;
   font-weight: 400;
   width: 18rem;
   &:hover {
     border: 2px solid $opentable-red;
-    padding: calc(0.75rem - 1px) calc(1rem - 2px);
+    padding: calc(1rem - 1px) calc(1rem - 2px);
     cursor: pointer;
   }
-  &.hide-all-details-button {
+  &.hideAllDetailsButton {
     display: none;
   }
 }
 
-.restaurant-details {
+.restaurantDetails {
   display: flex;
   align-items: flex-start;
   position: relative;
-  .left-items, .right-items {
+  .leftItems, .rightItems {
     width: 45%;
     padding: 0;
   }
-  .left-items {
+  .leftItems {
     margin-right: 1rem;
   }
-  .right-items {
+  .rightItems {
     margin-left: 1rem;
     .map {
       margin: 0 0 1rem;
     }
   }
-  .detail-icon {
+  .detailIcon {
     display: inline;
   }
-  .detail-item {
+  .detailItem {
     display: flex;
     font-size: 0.875em;
     align-items: flex-start;
-    .item-info {
+    .itemInfo {
       display: inline-block;
       margin: 0 0 1rem;
-      .item-details {
+      .itemDetails {
         font-weight: 300;
-        &.website-link, &.address-link {
+        &.websiteLink, &.addressLink {
           color: $opentable-red;
           cursor: pointer;
         }
-        &.address-link {
+        &.addressLink {
           font-weight: 400;
         }
       }
@@ -208,17 +208,17 @@ svg {
   }
 }
 
-#private-dining {
+#privateDining {
   margin: 2rem 0 0;
   h2 {
     font-size: 0.875em;
     margin-bottom: 0.25rem;
   }
-  p, .private-dining-button {
+  p, .privateDining-button {
     font-size: 1em;
     font-weight: 300;
   }
-  .private-dining-button {
+  .privateDining-button {
     padding: 0.5rem 1rem;
     border: 1px solid $grey;
     font-size: 0.875em;
@@ -232,11 +232,11 @@ svg {
   }
 }
 
-.expand-content {
+.expandContent {
   height: auto;
 }
 
-.collapse-content {
+.collapseContent {
   height: 800px;
   background-image: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
   overflow: hidden;
