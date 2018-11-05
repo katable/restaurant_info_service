@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../scss/base.scss';
 
 const PrivateDining = ({ privateDining }) => (
-  <div id="private-dining">
+  <div id={styles.privateDining}>
     <h2>Private Dining</h2>
     <p>{ privateDining }</p>
-    <div className="private-dining-button">View Private Dining Details</div>
+    <div className={styles.privateDiningButton}>View Private Dining Details</div>
   </div>
 );
 

@@ -5,7 +5,7 @@ import TopTags from './TopTags.jsx';
 import Description from './Description.jsx';
 import RestaurantDetails from './RestaurantDetails.jsx';
 import PrivateDining from './PrivateDining.jsx';
-import '../scss/base.scss';
+import styles from '../scss/base.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -88,7 +88,7 @@ class App extends React.Component {
   render() {
     const { restaurantInfo, expanded, expandContent } = this.state;
     return (
-      <div id="overview-section">
+      <div id={styles.overviewSection}>
         <Title restaurantName={restaurantInfo.name} />
         <InfoMenu restaurantInfo={restaurantInfo} />
         <TopTags restaurantTags={restaurantInfo.tags.main} />
@@ -98,12 +98,12 @@ class App extends React.Component {
           toggleDescriptionExpand={this.toggleDescriptionExpand}
         />
         <div>
-          <div id="details" className={expandContent ? 'auto-height' : false}>
+          <div id={styles.details} className={expandContent ? styles.autoHeight : 'false'}>
             <RestaurantDetails restaurantInfo={restaurantInfo} />
             <PrivateDining privateDining={restaurantInfo.private_dining} />
-            <div className={expandContent ? 'hide' : 'transparent'} />
+            <div className={expandContent ? styles.hide : styles.transparent} />
           </div>
-          <div id="all-details-button" role="presentation" onClick={this.toggleContentExpand} className={expandContent ? 'hide-all-details-button' : 'false'}>View all details</div>
+          <div id={styles.allDetailsButton} role="presentation" onClick={this.toggleContentExpand} className={expandContent ? styles.hideAllDetailsButton : 'false'}>View all details</div>
         </div>
       </div>
     );

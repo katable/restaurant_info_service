@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Stars from './Stars.jsx';
+import styles from '../scss/base.scss';
 
 const { icons } = require('../img/icons.js');
 
@@ -16,31 +17,31 @@ const InfoMenu = ({ restaurantInfo }) => {
   }
   const cuisine = restaurantInfo.cuisine[0];
   return (
-    <div id="info-menu">
+    <div id={styles.infoMenu}>
       <Stars stars={stars} />
-      <div className="review-container">
-        <div className="reviews">
+      <div className={styles.reviewContainer}>
+        <div className={styles.reviews}>
           <svg>
             <path d={icons.reviews} />
           </svg>
-          <div className="review-text">
+          <div className={styles.reviewText}>
             {`${reviews} reviews`}
           </div>
         </div>
       </div>
-      <div className="price">
+      <div className={styles.price}>
         <svg>
           <path d={icons.priceRange} />
         </svg>
-        <div className="price-text">
+        <div className={styles.priceText}>
           {price}
         </div>
       </div>
-      <div className="cuisine">
+      <div className={styles.cuisine}>
         <svg>
           <path d={icons.cuisine} />
         </svg>
-        <div className="cuisine-text">{cuisine}</div>
+        <div className={styles.cuisineText}>{cuisine}</div>
       </div>
     </div>
   );

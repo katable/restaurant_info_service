@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../scss/base.scss';
 
 const Description = ({ restaurantDescription, expanded, toggleDescriptionExpand }) => {
   const descriptionParagraphs = restaurantDescription.split('\n').map(paragraph => (
@@ -7,15 +8,15 @@ const Description = ({ restaurantDescription, expanded, toggleDescriptionExpand 
   ));
   const expandCollapseDiv = (
     <div className="expand-collapse-link">
-      <div role="presentation" className="expand-description" onClick={toggleDescriptionExpand}>
+      <div role="presentation" className={styles.expandDescription} onClick={toggleDescriptionExpand}>
         {expanded ? '- Read less' : '+ Read more'}
       </div>
     </div>
   );
 
   return (
-    <div id="description">
-      <div id="description-text" className={expanded ? 'expanded-p' : 'collapsed-p'}>
+    <div id={styles.description}>
+      <div id={styles.descriptionText} className={expanded ? styles.expandedP : styles.collapsedP}>
         {descriptionParagraphs}
       </div>
       {descriptionParagraphs.length > 1 && expandCollapseDiv}

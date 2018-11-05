@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../scss/base.scss';
 
 const DetailItem = ({ title, icon, details }) => {
   if (details) {
     let link;
     if (title === 'Address') {
-      link = 'item-details address-link';
+      link = `${styles.itemDetails} ${styles.addressLink}`;
     } else if (title === 'Website') {
-      link = 'item-details website-link';
+      link = `${styles.itemDetails} ${styles.websiteLink}`;
     } else {
-      link = 'item-details';
+      link = `${styles.itemDetails}`;
     }
     return (
-      <div className="detail-item">
-        <div className="detail-icon">
+      <div className={styles.detailItem}>
+        <div className={styles.detailIcon}>
           <svg>
             <path d={icon} />
           </svg>
         </div>
-        <div className="item-info">
-          <div className="item-title">
+        <div className={styles.itemInfo}>
+          <div className={styles.itemTitle}>
             {title === 'Address' ? '' : title}
           </div>
           <div className={link}>

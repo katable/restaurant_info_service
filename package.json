@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:debug": "jest --debug",
     "build": "webpack --mode=production",
     "start": "webpack --mode=development --watch",
     "seed": "node ./database/seed.js"
@@ -29,7 +30,7 @@
       "./test/jestSetup.js"
     ],
     "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/test/__mocks__/styleMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js"
     }
   },
@@ -44,7 +45,8 @@
     "otkit-icons": "^4.8.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -63,6 +65,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.4",
     "regenerator-runtime": "^0.12.1",
@@ -70,7 +73,6 @@
     "style-loader": "^0.23.1",
     "svg-react-loader": "^0.4.6",
     "svgo-loader": "^2.2.0",
-    "webpack": "^4.23.1",
-    "whatwg-fetch": "^3.0.0"
+    "webpack": "^4.23.1"
   }
 }
