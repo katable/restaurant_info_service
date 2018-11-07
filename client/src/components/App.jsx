@@ -1,10 +1,10 @@
 import React from 'react';
-import Title from './Title.jsx';
-import InfoMenu from './InfoMenu.jsx';
-import TopTags from './TopTags.jsx';
-import Description from './Description.jsx';
-import RestaurantDetails from './RestaurantDetails.jsx';
-import PrivateDining from './PrivateDining.jsx';
+import Title from './Title';
+import InfoMenu from './InfoMenu';
+import TopTags from './TopTags';
+import Description from './Description';
+import RestaurantDetails from './RestaurantDetails';
+import PrivateDining from './PrivateDining';
 import styles from '../scss/base.scss';
 
 class App extends React.Component {
@@ -53,8 +53,9 @@ class App extends React.Component {
       expanded: false,
       expandContent: false,
     };
+
     this.toggleDescriptionExpand = this.toggleDescriptionExpand.bind(this);
-    this.toggleContentExpand = this.toggleContentExpand.bind(this);    
+    this.toggleContentExpand = this.toggleContentExpand.bind(this);
   }
 
   componentDidMount() {

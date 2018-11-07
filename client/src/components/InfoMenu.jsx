@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stars from './Stars.jsx';
+import Stars from './Stars';
 import styles from '../scss/base.scss';
 
 const { icons } = require('../img/icons.js');

@@ -1,7 +1,9 @@
+/* eslint-env jest */
+/* eslint react/jsx-filename-extension: 0 */
 import React from 'react';
 import { shallow } from 'enzyme';
-import InfoMenu from '../InfoMenu.jsx';
-import Stars from '../Stars.jsx';
+import InfoMenu from '../InfoMenu';
+import Stars from '../Stars';
 
 describe('<InfoMenu />', () => {
   it('renders stars', () => {

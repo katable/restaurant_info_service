@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DetailItem from './DetailItem.jsx';
+import DetailItem from './DetailItem';
 import styles from '../scss/base.scss';
 
 const { icons } = require('../img/icons.js');

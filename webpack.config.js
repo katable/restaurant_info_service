@@ -5,9 +5,6 @@ const SRC_DIR = path.join(__dirname, './client/src');
 const DIST_DIR = path.join(__dirname, './client/dist');
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
   module: {
     rules: [{
       test: /\.scss$/,
@@ -27,6 +24,9 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       }],
+      resolve: {
+        extensions: ['.js', '.jsx'],
+      },
     },
     {
       test: /\.svg$/,
