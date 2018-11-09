@@ -1,9 +1,7 @@
-const mongoose = require('mongoose');
 const faker = require('faker');
 const db = require('./index.js');
 
-mongoose.connect('mongodb://localhost/opentable');
-
+let arr = [];
 const cuisines = [
   'American', 'Italian', 'Steakhouse', 'Seafood',
   'French', 'Indian', 'Mexican', 'Japanese',
@@ -122,14 +120,19 @@ const RestaurantInfo = function RestaurantInfo() {
 };
 
 const createRecords = (num) => {
-  const arr = [];
+  arr = [];
   for (let i = 1; i < num; i += 1) {
     const newData = new RestaurantInfo();
     newData.restaurant_id = i;
     arr.push(newData);
   }
-  const Restaurant = mongoose.model('Restaurant', db.restaurantInfoSchema);
-  Restaurant.create(arr).then();
 };
 
 createRecords(100);
+const Restaurant = db.model('Restaurant', db.restaurantInfoSchema);
+Restaurant.create(arr, (err) => {
+  if (err) {
+    throw (err);
+  }
+  db.db.close();
+});

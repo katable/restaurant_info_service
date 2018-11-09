@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/opentable');
+mongoose.connect('mongodb://mongo/opentable');
 
 const restaurantInfoSchema = mongoose.Schema({
   restaurant_id: Number,
@@ -44,4 +44,4 @@ const restaurantInfoSchema = mongoose.Schema({
 
 const Restaurant = mongoose.model('Restaurant', restaurantInfoSchema);
 
-module.exports.Restaurant = Restaurant;
+module.exports = Restaurant;
