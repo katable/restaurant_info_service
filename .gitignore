@@ -62,3 +62,5 @@ typings/
 
 # AWS env
 .aws.json
+
+data/
